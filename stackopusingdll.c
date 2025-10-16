@@ -85,7 +85,7 @@ int menu(void)
         printf("\n\t4. Top");
         printf("\n\t0. Exit");
         printf("\n\tEnter your choice: ");
-        scanf_s("%d", &choice);
+        scanf("%d", &choice);
     } while (choice < 0 || choice > 4);
     return choice;
 }
