@@ -34,7 +34,7 @@ int main(void)
         {
         case 1: // Push
             printf("\n\tEnter data to push: ");
-            scanf_s("%d", &data);
+            scanf("%d", &data);
             result = push(&head, &last, &data);
             if (result == 0)
                 printf("\n\t%d pushed onto stack.\n", data);
