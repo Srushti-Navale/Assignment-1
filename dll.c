@@ -34,7 +34,7 @@ int main(void)
         switch (choice)
         {
         case 1:printf("\n\t Enter data = ");
-            scanf_s("%d", &iData);
+            scanf("%d", &iData);
             succ = addNodeBeforeHead(&head, &last, &iData);
             if (succ == 0)
             {
@@ -46,7 +46,7 @@ int main(void)
             }
             break;
         case 2:printf("\n\t Enter data = ");
-            scanf_s("%d", &iData);
+            scanf("%d", &iData);
             succ = addNodeAfterLast(&head, &last, &iData);
             if (succ == 0)
             {
@@ -137,7 +137,7 @@ int menu(void)
         printf("\n\t 7. Display last node data");
         printf("\n\t 0. Exit");
         printf("\n\t Enter your choice = ");
-        scanf_s("%d", &choice);
+        scanf("%d", &choice);
     } while (choice < 0 || choice > 7);
     return choice;
 }
