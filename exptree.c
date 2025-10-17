@@ -48,22 +48,48 @@ int isEmptyopnd(struct opndstack *top);
 int main() 
 {
     char infix[100]={'\0'};
+    int choice=0;
+
     printf("Enter infix expression (single characters or digits only): ");
     scanf("%s", infix);
 
     struct TreeNode *exprTree = createTreeFromInfix(infix);
 
-    printf("\nInorder Traversal   (Should resemble infix):   ");
-    inorder(exprTree);
-
-    printf("\nPreorder Traversal  (Prefix form):             ");
-    preorder(exprTree);
-
-    printf("\nPostorder Traversal (Postfix form):            ");
-    postorder(exprTree);
-
-    printf("\n");
-
+    printf("enter your choice :");
+    scanf("%d",&choice);
+    
+    do
+    {
+        printf("\nmenu for traversal:\n");
+        printf("1. Inorder\n");
+        printf("2. Preorder\n");
+        printf("3. Postorder\n");
+        printf("0. Exit\n");
+        printf("enter your choice :");
+        scanf("%d",&choice);
+    
+    switch(choice)
+    {
+        case 1:
+            printf("\nInorder Traversal   (Should resemble infix):");
+            inorder(exprTree);
+            break;
+        case 2:
+            printf("\nPreorder Traversal  (Prefix form):");
+            preorder(exprTree);
+            break;
+        case 3:
+            printf("\nPostorder Traversal (Postfix form):");
+            postorder(exprTree);
+            break;
+        case 0:
+            printf("exiting....");
+            break;
+        default:
+            printf("Invalid choice.");
+            break;
+    }
+  }while(choice!=0);
     return 0;
 }
 
