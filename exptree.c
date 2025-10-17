@@ -55,12 +55,9 @@ int main()
 
     struct TreeNode *exprTree = createTreeFromInfix(infix);
 
-    printf("enter your choice :");
-    scanf("%d",&choice);
-    
     do
     {
-        printf("\nmenu for traversal:\n");
+        printf("\n\nmenu for traversal:\n");
         printf("1. Inorder\n");
         printf("2. Preorder\n");
         printf("3. Postorder\n");
@@ -71,15 +68,15 @@ int main()
     switch(choice)
     {
         case 1:
-            printf("\nInorder Traversal   (Should resemble infix):");
+            printf("\nInorder Traversal:");
             inorder(exprTree);
             break;
         case 2:
-            printf("\nPreorder Traversal  (Prefix form):");
+            printf("\nPreorder Traversal:");
             preorder(exprTree);
             break;
         case 3:
-            printf("\nPostorder Traversal (Postfix form):");
+            printf("\nPostorder Traversal:");
             postorder(exprTree);
             break;
         case 0:
