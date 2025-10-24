@@ -246,7 +246,7 @@ void deleteatposition(struct node **head,struct node **tail,int position,int *dd
     {
         if(position==0)
         {
-            deleteathead(&head,&tail);
+            deleteathead(&head,&tail,&ddata);
         }
         else
         {
