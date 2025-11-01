@@ -18,7 +18,7 @@ int main() {
     int choice, val;
 
     do {
-        printf("\n--- Stack Menu ---\n");
+        printf("\nStack Menu\n");
         printf("1. Push\n");
         printf("2. Pop\n");
         printf("3. Display\n");

@@ -54,6 +54,7 @@ int main()
     return 0;
 }
 
+
 void enqueue(struct queue **front, struct queue **rear, int value) 
 {
     struct queue *newNode = (struct queue *)malloc(sizeof(struct queue));
@@ -76,7 +77,9 @@ void enqueue(struct queue **front, struct queue **rear, int value)
     printf("Enqueued %d\n", value);
 }
 
-int dequeue(struct queue **front) {
+
+int dequeue(struct queue **front)
+ {
     if (*front == NULL) {
         printf("Queue is empty\n");
         return -1;
@@ -91,7 +94,8 @@ int dequeue(struct queue **front) {
     return dequeuedValue;
 }
 
-void displayQueue(struct queue *front) {
+void displayQueue(struct queue *front) 
+{
     if (front == NULL) {
         printf("Queue is empty\n");
         return;
@@ -104,3 +108,7 @@ void displayQueue(struct queue *front) {
     }
     printf("\n");
 }
+
+
+
+
