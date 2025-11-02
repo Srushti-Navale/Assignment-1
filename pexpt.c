@@ -171,3 +171,86 @@ void postorder(struct treenode *root)
     printf("%c", root->data);
 }
 
+void inorederNRC(struct treenode *root) {
+    struct opndstack *stack = NULL;
+     struct treenode *curr = root;
+
+    while (curr != NULL || stack != NULL) {
+        while (curr != NULL) {
+            struct opndstack *newNode =(struct opndstack *)malloc(sizeof(struct opndstack));
+            newNode->treedata = curr;
+            newNode->next = stack;
+            stack = newNode;
+            curr = curr->left;
+        } //curr goes to leftmost node
+
+         struct opndstack *temp = stack;
+        stack = stack->next;
+        curr = temp->treedata;
+        printf("%c ", curr->data);
+        free(temp);
+
+        curr = curr->right;
+    }
+}       
+
+void inorderNR(struct treenode *root)
+{
+    struct opndstack *st = NULL;
+    struct treenode *curr = root;
+
+    while(curr != NULL || !isemptyopndstack(st))
+    {
+        while(curr != NULL)
+        {
+            opndpush(&st, curr);
+            curr = curr->left;
+        }
+        curr = opndpop(&st);
+        printf("%c", curr->data);
+        curr = curr->right;
+    }
+}
+
+// Preorder Non-Recursive
+void preorderNR(struct treenode *root)
+{
+    if(root == NULL) return;
+
+    struct opndstack *st = NULL;
+    opndpush(&st, root);
+
+    while(!isemptyopndstack(st))
+    {
+        root = opndpop(&st);
+        printf("%c", root->data);
+
+        if(root->right) opndpush(&st, root->right);
+        if(root->left) opndpush(&st, root->left);
+    }
+}
+
+// Postorder Non-Recursive (Using 2 stacks)
+void postorderNR(struct treenode *root)
+{
+    if(root == NULL) return;
+
+    struct opndstack *st1 = NULL, *st2 = NULL;
+
+    opndpush(&st1, root);
+
+    while(!isemptyopndstack(st1))
+    {
+        root = opndpop(&st1);
+        opndpush(&st2, root);
+
+        if(root->left) opndpush(&st1, root->left);
+        if(root->right) opndpush(&st1, root->right);
+    }
+
+    while(!isemptyopndstack(st2))
+    {
+        root = opndpop(&st2);
+        printf("%c", root->data);
+    }
+}
