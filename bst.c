@@ -7,7 +7,7 @@ struct treenode
     struct treenode *left;
     struct treenode *right;
 };
-
+//function to create a new node
 struct treenode* newnode(int data)
 {
     struct treenode* newnode = (struct treenode*)malloc(sizeof(struct treenode));
