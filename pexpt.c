@@ -34,7 +34,7 @@ int main()
     int choice;
 
     printf("Enter postfix expression: ");
-    scanf("%s", postfix);
+    scanf("%s", postfix);//no & for strings to scan as they are already pointers
 
     exprtree = createtreefrompostfix(postfix);
 

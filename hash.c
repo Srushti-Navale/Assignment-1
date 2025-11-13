@@ -166,7 +166,7 @@ int chaininsert(int hash[][3], int mod, int key)
             prev = hash[prev][2];
         }
 
-
+        //linear probing to find empty space
         for (int i = 1; i < mod; i++)
         {
             newIndex = (index + i) % mod;
@@ -174,7 +174,8 @@ int chaininsert(int hash[][3], int mod, int key)
             {
                 hash[newIndex][1] = key;
                 hash[newIndex][2] = -1;
-
+                
+                //linking the previous index to new index if they are same chain
                 if (hash[prev][1] % mod == index)
                 {
                     hash[prev][2] = newIndex;
